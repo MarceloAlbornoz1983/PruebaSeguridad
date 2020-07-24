@@ -8,30 +8,35 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="capacitaciones")
+@Table(name="INSTANCIA_CAPACITACION")
 public class ListadoCapacitaciones {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="id_capacitacion")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_INS")
 	private int idCapacitacion;
 	
-	private String capacitacion;
-	private String profesional;
-	private String empresa;
+	@Column(name="CAPACITACION_ID_CAP")
+	private int capacitacion;
 	
-	@Column(name="fecha_agendada")
+	@Column(name="PROFESIONALES_RUT_PROF")
+	private int profesional;
+	
+	@Column(name="EMPRESA_RUT_EMPRESA")
+	private int empresa;
+	
+	@Column(name="FECHA_AGENDADA")
 	private String fechaAgendada;
 	
-	@Column(name="fecha_realizada")
+	@Column(name="FECHA_REALIZADA")
 	private String fechaRealizada;
 	
-	@Column(name="estado_capacitacion")
+	@Column(name="ESTADO_CAPACITACION")
 	private String estado;
 	
-	@Column(name="tema_capacitacion")
+	@Column(name="TEMA_CAPACITACION")
 	private String tema;
 	
-	@Column(name="observaciones")
+	@Column(name="OBSERVACIONES_CAPACITACION")
 	private String observacion;
 	
 	
@@ -39,7 +44,7 @@ public class ListadoCapacitaciones {
 	
 	}
 
-	public ListadoCapacitaciones(int idCapacitacion, String capacitacion, String profesional, String empresa,
+	public ListadoCapacitaciones(int idCapacitacion, int capacitacion, int profesional, int empresa,
 			String fechaAgendada, String fechaRealizada, String estado, String tema, String observacion) {
 		super();
 		this.idCapacitacion = idCapacitacion;
@@ -61,27 +66,27 @@ public class ListadoCapacitaciones {
 		this.idCapacitacion = idCapacitacion;
 	}
 
-	public String getCapacitacion() {
+	public int getCapacitacion() {
 		return capacitacion;
 	}
 
-	public void setCapacitacion(String capacitacion) {
+	public void setCapacitacion(int capacitacion) {
 		this.capacitacion = capacitacion;
 	}
 
-	public String getProfesional() {
+	public int getProfesional() {
 		return profesional;
 	}
 
-	public void setProfesional(String profesional) {
+	public void setProfesional(int profesional) {
 		this.profesional = profesional;
 	}
 
-	public String getEmpresa() {
+	public int getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(String empresa) {
+	public void setEmpresa(int empresa) {
 		this.empresa = empresa;
 	}
 

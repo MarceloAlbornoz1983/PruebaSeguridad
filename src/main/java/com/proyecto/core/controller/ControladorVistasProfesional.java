@@ -16,8 +16,8 @@ import com.proyecto.core.model.ListadoCapacitaciones;
 public class ControladorVistasProfesional {
 
 	//Variable para Listar Capacitaciones
-	//@Autowired
-	//private IListadoCapacitaciones service;
+	@Autowired
+	private IListadoCapacitaciones service;
 	
 	
 	@GetMapping("capacitacion")
@@ -25,10 +25,10 @@ public class ControladorVistasProfesional {
 		return "crear_capacitacion";
 	}
 	
-	@GetMapping("lista_capacitacion")
-	public String lista_capacitacion() {
-//		List<ListadoCapacitaciones>listado=service.listar();
-//		model.addAttribute("listado", listado);
+	@GetMapping("/lista_capacitacion")
+	public String listar(Model model) {
+		List<ListadoCapacitaciones>listado=service.listar();
+		model.addAttribute("listado", listado);
 		return "lista_capacitacion";
 	}
 	
